@@ -28,6 +28,6 @@
       "name": "Coriss Ambady",
       "area": "Financial Analyst",
       "slogan":"Fermentum massa justo sit amet risus morbi leo."
-   }, 
+   }
  ]
 ---

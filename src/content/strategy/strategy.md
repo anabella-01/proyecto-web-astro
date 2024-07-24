@@ -15,6 +15,6 @@ strategy:
    "id":2,
    "title":"Collect ideas",
    "description": "Nulla vitae elit libero pharetra augue dapibus."
-  },
+  }
 ]
 ---

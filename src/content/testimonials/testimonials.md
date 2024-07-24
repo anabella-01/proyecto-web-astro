@@ -51,6 +51,6 @@
       "area":"Financial Analyst",
       "testimonial": "“Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper. Cras justo odio dapibus facilisis sociis natoque penatibus.”"
 
-   },
+   }
  ]
 ---

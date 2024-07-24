@@ -21,7 +21,7 @@ faqs:
       "id": 4,
       "question":"How do I reset my Account password?",
       "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur voluptates."
-   },
+   }
 
    ]
 ---
