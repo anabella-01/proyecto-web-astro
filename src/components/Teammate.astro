@@ -1,0 +1,19 @@
+---
+export interface Props{
+    id: number;
+    image: string;
+    name: string;
+    area: string;
+    slogan: string;
+}
+const {id,image,name,area,slogan} = Astro.props;
+
+import {Image} from 'astro:assets';
+---
+
+<div class= "bg-white shadow-md p-5">
+    <Image src={image} alt="team" inferSize={true}/>
+    <h3 class="text-[20px]">{name}</h3>
+    <p class="text-[#AAB0BC] uppercase">{area}</p>
+    <p>{slogan}</p>
+</div>

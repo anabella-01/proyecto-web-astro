@@ -1,0 +1,27 @@
+---
+interface IServiceItem{
+    id: number;
+    title: string;
+    image: string;
+    description: string;
+}
+
+import ServiceItem from "./ServiceItem.astro"
+
+import { getEntry} from "astro:content";
+const {data:servicesData} = await getEntry("services","services");
+const {services} = servicesData;
+
+
+---
+
+<section class="bg-light-gray py-12 px-0">
+    <div class="container">
+    <h2 class="max-w-[655px] mt-0 mx-auto mb-16 text-center">The service we offer is specifically designed to meet your needs.</h2>
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-3">
+        {services.map((service: IServiceItem) => (
+            <ServiceItem  {...service} />
+        ))}
+    </div>
+</div>
+</section>

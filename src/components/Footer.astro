@@ -1,0 +1,71 @@
+---
+import Button from "../components/Button.astro"
+import { Image } from 'astro:assets';
+import footerLogo from '../assets/images/logo/logo-light.svg';
+---
+<footer class="bg-heading-color md:px-14 p-5 max-w-screen-3xl mx-auto py-10">
+    
+    <div class="grid grid-cols-1 space-y-8 md:grid-cols-2  md:justify-items-end container mx-auto lg:mb-10 lg:items-center">
+        <div>
+        <h4 class="text-white font-semibold text-3xl lg:text-4xl lg:w-2/2 ">
+        Join our community by using our
+        services and grow your business.
+        </h4>         
+        </div>
+        <div class="">
+            <Button content="Try it for Free" href="/"/>    
+        </div>
+    </div>
+        <hr class="text-white mt-10"/>
+
+    <div class="grid grid-cols-1 mt-10 lg:grid-cols-4 md:space-y-4 md:space-x-4">
+        <div class="flex-col space-y-4 md:ml-4">
+        <div class="mt-5 cursor-pointer">
+            <Image src={footerLogo} alt="logo" />
+        </div>
+        <div>
+            <p class="text-footer-p font-medium">
+            © 2023 Sandbox.
+            All rights reserved.</p>
+        </div>
+        </div>
+
+        <div class="space-y-4  mt-5 md:mt-0">
+        <h3 class="font-semibold text-white text-2xl">Get in Touch</h3>
+        <p class="text-footer-p">Moonshine St. 14/05
+        Light City, London,
+        United Kingdom
+        </p>
+        <p class="text-footer-p">info@email.com
+        00 (123) 456 78 90
+        </p>
+        </div>
+
+        <div class="mt-4">
+            <ul class="flex-col space-y-4 md:space-y-4 ">
+                <li><a href="/" class="font-semibold text-white text-2xl">Learn More</a></li>
+                <li><a href="/" class="text-footer-p hover:text-white">About Us</a></li>
+                <li><a href="/" class="text-footer-p hover:text-white">Our Story</a></li>
+                <li><a href="/" class="text-footer-p hover:text-white">Terms of Use</a></li>
+                <li><a href="/" class="text-footer-p hover:text-white">Projects</a></li>
+                <li><a href="/" class="text-footer-p hover:text-white">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <div class="mt-4">
+            <div class="space-y-3">
+                <h3 class="font-semibold text-white text-2xl">
+                    Our Newsletter
+                    </h3>
+                <p class="text-footer-p">Subscribe to our newsletter to get our
+                news & deals delivered to you.</p>
+            </div>
+
+             <div class="mt-8 flex ">
+              <input type="email" name="email" id="email" placeholder="Email Address" class="bg-paragraph-color rounded-md focus:outline-none w-2/3 md:w-auto 
+              lg:w-[150px] xl:w-auto bg-opacity-65 py-2 px-4"/>
+              <input type="submit" name="subscribe" id="subscribe" value="Subscribe" class="px-4 py-2 bg-primary-color rounded-md -ml-3 cursor-pointer hover:bg-white hover:text-heading-color hover:border-heading-color border-1 text-white w-auto"/>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,17 @@
+---
+interface Props{
+       content: string;
+       href: string;
+       customStyles?: string;
+}
+
+const {href,content,customStyles} = Astro.props
+
+---
+
+<a class= {`bg-primary-color rounded-3xl text-white block h-fit p-4 w-fit no-underline shadow-md ${customStyles}`} href={href}
+>
+
+    {content}
+
+</a>

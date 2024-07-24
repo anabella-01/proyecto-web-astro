@@ -1,0 +1,18 @@
+---
+export interface Props{
+    id: number;
+    title: string;
+    image: string;
+    description: string;
+}
+const{id,title,image,description} = Astro.props
+
+import {Image} from 'astro:assets';
+---
+
+<div class="text-center">
+    <Image class="min-h-[230px] mx-auto mb-3" src={image} alt="services" inferSize={true} loading="eager"/>
+    <h3 class="mb-4">{title}</h3>
+     <p class="mt-0 mx-auto mb-5 max-w-[316px]"> {description}</p>
+    <a class=" text-primary-color no-underline" href="/">Learn More</a>
+    </div>

@@ -1,0 +1,29 @@
+---
+ interface IProject{
+    id: number;
+    image: string;
+    title: string;
+    category: string;
+}
+
+import Project from "../components/Project.astro"
+import { getEntry } from "astro:content";
+
+const {data:projectsData} = await getEntry("projects","projects");
+const {projects} = projectsData;
+
+//import { getCollection } from "astro:content";
+//const data = await getCollection("projects");
+//const projects = data[0].data.projects;
+---
+
+<section class="pt-12 px-0 pb-24">
+    <h2 class="mt-0 mx-auto mb-12 max-w-[780px] text-center">
+        Check out some of our awesome projects with creative ideas and great design.
+    </h2>
+    <div class="container grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
+        { projects.map((project:IProject)=>(
+          <Project  {...project} />  
+        ))}
+    </div>
+    </section>

@@ -1,0 +1,39 @@
+---
+interface IFAQ{
+    id: number;
+    question: string;
+    answer: string;
+}
+
+import Button from "../components/Button.astro";
+import FAQ from "../components/FAQ.astro";
+import {getEntry} from 'astro:content';
+
+const {data:faqsData} = await getEntry("faqs","faqs");
+const {faqs} = faqsData;
+
+---
+
+<section class="bg-gray pt-12 px-0 pb-24">
+    <div class="container grid grid-cols-1 gap-20 md:gap-8 lg:gap-16 lg:grid-cols-2">
+        <div class="left">
+            <h2 class="mb-5">
+                If you don't see an answer to
+                your question, you can send us
+                an email from our contact form.
+            </h2>
+            <p class="mb-5">
+                Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio
+                sem nec elit. Nullam quis risus eget urna mollis ornare.
+            </p>
+            <Button content="All FAQ" href="/faqs"/>
+        </div>
+        <div class="right">
+            <div class="flex flex-col gap-5">
+                {faqs.map((item:IFAQ)=>(
+                    <FAQ {...item}/>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>

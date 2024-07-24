@@ -1,0 +1,16 @@
+---
+interface Props{
+    id: number;
+    question: string;
+    answer: string;
+}
+
+const {id,question,answer} = Astro.props
+---
+<div class="shadow-md cursor-pointer">
+    <details class="bg-white p-5 rounded">
+        <summary class="bg-white text-lg font-semibold marker:text-primary-color">{question}</summary>
+        <p>{answer}</p>
+    </details>
+</div>
+

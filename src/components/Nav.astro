@@ -1,0 +1,64 @@
+---
+interface IMenuItem {
+    id: number;
+    href: string;
+    name: string;
+}
+
+import {Image} from 'astro:assets';
+import logo from "../assets/images/logo/logo.svg"
+import { getEntry} from "astro:content";
+
+const {data:menuData}  = await getEntry("nav","nav");
+const {menu} = menuData;
+
+---
+
+<nav class="py-5 px-0">
+    <div class="container flex justify-between">
+        <div class="logo">
+            <Image src={logo} alt="Logo" loading="eager"/>
+        </div>
+        <span class="md:hidden btn-menu"> Menu </span>
+        <ul class= {`hidden list-none gap-[40px] md:flex`}>
+            {
+              menu.map((item:IMenuItem)=>(
+              <li><a class="text-white md:text-paragraph-color" href={item.href}>{item.name}</a></li>
+              ))
+            }
+            <span class="font-semibold absolute right-[10px] top-[20px] btn-menu md:hidden">Close</span>
+        </ul>
+    </div>
+ </nav>
+
+
+ <style>
+
+    .active{
+            @apply bg-primary-color;
+            display: flex;
+            position: absolute;
+            top:  0;
+            left: 0;
+            height: 100vh;
+            flex-direction: column;
+            padding: 50px 0 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+
+ </style>
+
+ <script>
+
+    const navButtons = document.querySelectorAll('.btn-menu');
+    const navMenu    = document.querySelector('nav ul');
+
+    navButtons.forEach((element) => {
+        element.addEventListener('click', function(){
+            navMenu?.classList.toggle("active");
+        });
+    });
+    
+ </script>
